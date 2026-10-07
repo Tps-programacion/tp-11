@@ -1,0 +1,60 @@
+.gameboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.gameboard-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.gameboard-flag {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.gameboard-form {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.gameboard-input {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+.gameboard-btn {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.gameboard-loading {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 24px;
+}

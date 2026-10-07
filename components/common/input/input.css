@@ -1,0 +1,35 @@
+.common-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.common-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.common-input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.common-input:focus {
+  border-color: #007bff;
+}
+
+.common-input-error {
+  border-color: #dc3545;
+}
+
+.common-error-msg {
+  color: #dc3545;
+  font-size: 14px;
+}
