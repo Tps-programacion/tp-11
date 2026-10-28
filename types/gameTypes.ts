@@ -1,25 +1,29 @@
+export type Difficulty = 'facil' | 'media' | 'dificil';
 
 export interface Country {
-  name: string;
+  nameEs: string;
+  nameEn: string;
   flag: string;
+  difficulty: Difficulty;
 }
 
-// Este es el estado global de nuestro juego
 export interface GameState {
   countries: Country[];
   currentCountry: Country | null;
   score: number;
   isLoading: boolean;
-  // Agregamos los que mencionaste para el futuro
-  players: string[]; 
+  players: string[];
   timer: number;
   hints: number;
   timeLeft: number;
+  difficulty: Difficulty;
+  puntajeResta: number; // <-- Exponemos la cantidad de puntos que se restan
   skip: () => void;
 }
 
-// Estas son las funciones que el Contexto le va a "prestar" a los componentes
 export interface GameContextProps extends GameState {
+  setDifficulty: (diff: Difficulty) => void;
+  startNewGame: () => void;
   guess: (countryName: string) => boolean;
   nextCountry: () => void;
   resetScore: () => void;

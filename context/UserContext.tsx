@@ -1,7 +1,5 @@
-// context/UserContext.tsx
 import React, { createContext, useContext, useState, type ReactNode } from 'react';
 
-// Definimos los tipos para el contexto
 export interface UserContextProps {
   username: string;
   setUsername: (name: string) => void;
@@ -9,10 +7,8 @@ export interface UserContextProps {
   addGlobalScore: (points: number) => void;
 }
 
-// 1. Creamos el contexto
 const UserContext = createContext<UserContextProps | undefined>(undefined);
 
-// 2. Creamos el Provider
 export const UserProvider = ({ children }: { children: ReactNode }) => {
   const [username, setUsername] = useState<string>('');
   const [globalScore, setGlobalScore] = useState<number>(0);
@@ -21,7 +17,6 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     setGlobalScore((prev) => prev + points);
   };
 
-  // Separamos el valor, respetando tu diseño
   const value: UserContextProps = {
     username,
     setUsername,
@@ -29,7 +24,6 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     addGlobalScore,
   };
 
-  // 3. Retornamos usando createElement
   return React.createElement(
     UserContext.Provider,
     { value },
@@ -37,7 +31,6 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-// 4. Custom Hook
 export const useUser = (): UserContextProps => {
   const context = useContext(UserContext);
   if (!context) {
